@@ -1,0 +1,50 @@
+[
+  {
+    "bs_date": "1970-01-01",
+    "ad_date": "1913-04-13",
+    "weekday": "Sunday",
+    "description": "Base anchor (1 Baisakh 1970 BS)",
+    "source": "Nepal Gazette & British India Astronomical Records",
+    "verified": true
+  },
+  {
+    "bs_date": "2000-01-01",
+    "ad_date": "1943-04-14",
+    "weekday": "Wednesday",
+    "description": "Checkpoint anchor (1 Baisakh 2000 BS)",
+    "source": "Government of Nepal Gazette 2000 BS",
+    "verified": true
+  },
+  {
+    "bs_date": "2065-02-15",
+    "ad_date": "2008-05-28",
+    "weekday": "Wednesday",
+    "description": "Republic Day (Ganatantra Diwas)",
+    "source": "Constituent Assembly Gazette Declaration 2065 BS",
+    "verified": true
+  },
+  {
+    "bs_date": "2072-06-03",
+    "ad_date": "2015-09-20",
+    "weekday": "Sunday",
+    "description": "Constitution Day (Sambidhan Diwas)",
+    "source": "Nepal Gazette (Constitution of Nepal Promulgation 2072)",
+    "verified": true
+  },
+  {
+    "bs_date": "2081-01-01",
+    "ad_date": "2024-04-13",
+    "weekday": "Saturday",
+    "description": "New Year 2081 BS",
+    "source": "Nepal Panchanga Nirnayak Bikas Samiti Calendar 2081",
+    "verified": true
+  },
+  {
+    "bs_date": "2083-07-17",
+    "ad_date": "2026-11-03",
+    "weekday": "Tuesday",
+    "description": "Current date checkpoint",
+    "source": "Nepal Panchanga Nirnayak Bikas Samiti Calendar 2083",
+    "verified": true
+  }
+]
