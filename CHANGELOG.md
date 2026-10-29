@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Date type utilities: `StartOfMonth`, `EndOfMonth`, `IsWeekend`, `Compare`, `Before`, `After`, `Equal`, and `Sub`.
+- Safe arithmetic: `AddDays` and `AddMonths` with end-of-month clamping and integer overflow protection.
+- Infallible operations on validated `Date` instances and comprehensive zero-value panic guarantees.
 - Core Bikram Sambat date conversion engine supporting 1970–2100 BS.
 - Static lookup table code generation via `internal/gen/gen_table.go`.
 - Golden tests validating 1 Baisakh across 131 years and mid-year historical anchors.

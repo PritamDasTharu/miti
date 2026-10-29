@@ -109,8 +109,26 @@ func TestZeroValueNoPanic(t *testing.T) {
 	if !zero.ToTime().IsZero() {
 		t.Errorf("zero.ToTime() expected zero time, got %v", zero.ToTime())
 	}
-	if !zero.ToTimeAt(10, 0, 0, 0, nil).IsZero() {
-		t.Errorf("zero.ToTimeAt() expected zero time, got %v", zero.ToTimeAt(10, 0, 0, 0, nil))
+	if zero.StartOfMonth() != (miti.Date{}) {
+		t.Errorf("zero.StartOfMonth() expected zero Date, got %v", zero.StartOfMonth())
+	}
+	if zero.EndOfMonth() != (miti.Date{}) {
+		t.Errorf("zero.EndOfMonth() expected zero Date, got %v", zero.EndOfMonth())
+	}
+	if zero.IsWeekend() {
+		t.Errorf("zero.IsWeekend() expected false, got true")
+	}
+	if zero.Sub(zero) != 0 {
+		t.Errorf("zero.Sub(zero) expected 0, got %d", zero.Sub(zero))
+	}
+	if zero.Compare(zero) != 0 {
+		t.Errorf("zero.Compare(zero) expected 0, got %d", zero.Compare(zero))
+	}
+	if _, err := zero.AddDays(1); err != miti.ErrInvalidDate {
+		t.Errorf("zero.AddDays() expected ErrInvalidDate, got %v", err)
+	}
+	if _, err := zero.AddMonths(1); err != miti.ErrInvalidDate {
+		t.Errorf("zero.AddMonths() expected ErrInvalidDate, got %v", err)
 	}
 }
 
