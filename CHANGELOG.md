@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Zero-allocation token-based formatting (`Format`, `FormatIn`, `AppendFormat`, `AppendFormatIn`).
+- Full localization with English and Nepali Devanagari numerals (`०-९`) and month/weekday names.
+- Flexible parsing with `Parse` supporting `[...]` literal escaping, transliteration aliases, and strict token validation.
 - Date type utilities: `StartOfMonth`, `EndOfMonth`, `IsWeekend`, `Compare`, `Before`, `After`, `Equal`, and `Sub`.
 - Safe arithmetic: `AddDays` and `AddMonths` with end-of-month clamping and integer overflow protection.
 - Infallible operations on validated `Date` instances and comprehensive zero-value panic guarantees.
