@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Nepali fiscal year (Aarthik Barsha) helpers: `FiscalYear()`, `FiscalYearRange()`, and `Quarter()`.
+- Explicit Baisakh–Ashadh fiscal year rules and century rollover support (`2099/00`).
 - Database safety with symmetric `database/sql/driver.Valuer` returning AD `time.Time` and `sql.Scanner` parsing AD text representations.
 - Dedicated `BSSQLDate` type for explicitly storing and scanning BS strings in `VARCHAR`/`TEXT` columns.
 - JSON and Text marshaling support (`json.Marshaler`/`Unmarshaler`, `encoding.TextMarshaler`/`TextUnmarshaler`) with explicit SQL `NULL` and JSON `null` handling.

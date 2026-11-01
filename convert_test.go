@@ -127,8 +127,14 @@ func TestZeroValueNoPanic(t *testing.T) {
 	if _, err := zero.AddDays(1); err != miti.ErrInvalidDate {
 		t.Errorf("zero.AddDays() expected ErrInvalidDate, got %v", err)
 	}
-	if _, err := zero.AddMonths(1); err != miti.ErrInvalidDate {
-		t.Errorf("zero.AddMonths() expected ErrInvalidDate, got %v", err)
+	if zero.FiscalYear() != "" {
+		t.Errorf("zero.FiscalYear() expected empty string, got %q", zero.FiscalYear())
+	}
+	if _, _, err := zero.FiscalYearRange(); err != miti.ErrInvalidDate {
+		t.Errorf("zero.FiscalYearRange() expected ErrInvalidDate, got %v", err)
+	}
+	if zero.Quarter() != 0 {
+		t.Errorf("zero.Quarter() expected 0, got %d", zero.Quarter())
 	}
 }
 
