@@ -5,22 +5,15 @@ All notable changes to `miti` will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.0.0] - 2026-11-02
 ### Added
-- Nepali fiscal year (Aarthik Barsha) helpers: `FiscalYear()`, `FiscalYearRange()`, and `Quarter()`.
-- Explicit Baisakh–Ashadh fiscal year rules and century rollover support (`2099/00`).
-- Database safety with symmetric `database/sql/driver.Valuer` returning AD `time.Time` and `sql.Scanner` parsing AD text representations.
-- Dedicated `BSSQLDate` type for explicitly storing and scanning BS strings in `VARCHAR`/`TEXT` columns.
-- JSON and Text marshaling support (`json.Marshaler`/`Unmarshaler`, `encoding.TextMarshaler`/`TextUnmarshaler`) with explicit SQL `NULL` and JSON `null` handling.
-- Zero-allocation token-based formatting (`Format`, `FormatIn`, `AppendFormat`, `AppendFormatIn`).
-- Full localization with English and Nepali Devanagari numerals (`०-९`) and month/weekday names.
-- Flexible parsing with `Parse` supporting `[...]` literal escaping, transliteration aliases, and strict token validation.
-- Date type utilities: `StartOfMonth`, `EndOfMonth`, `IsWeekend`, `Compare`, `Before`, `After`, `Equal`, and `Sub`.
-- Safe arithmetic: `AddDays` and `AddMonths` with end-of-month clamping and integer overflow protection.
-- Infallible operations on validated `Date` instances and comprehensive zero-value panic guarantees.
-- Core Bikram Sambat date conversion engine supporting 1970–2100 BS.
-- Static lookup table code generation via `internal/gen/gen_table.go`.
-- Golden tests validating 1 Baisakh across 131 years and mid-year historical anchors.
-- Exhaustive day-by-day roundtrip suite covering all 47,849 days.
-- Zero-alloc Nepal time conversion `FromTimeNepal` and `Today()`.
-- Repository initialization and Go module definition (`go 1.21`).
+- **Core Conversion Engine**: $O(1)$ zero-allocation conversions between Bikram Sambat (BS) and Gregorian (AD) calendars.
+- **Coverage & Provenance**: Continuous range covering 1970–2100 BS (~131 years, 47,849 days), with 1970–2083 BS officially verified against government records.
+- **Micro-Footprint Table**: Static month lookup and cumulative offset tables compiling into $\approx 2.1\text{ KB}$ of static memory.
+- **Data Verification**: Golden test suite checking 1 Baisakh across all 131 years, mid-year gazette anchors, and exhaustive roundtrip checking across all 47,849 days.
+- **Timezone Safety**: Zero-alloc `FromTimeNepal` and `Today()` preventing UTC server day-shift traps.
+- **Date Utilities & Arithmetic**: `StartOfMonth`, `EndOfMonth`, `IsWeekend`, `Compare`, `Sub`, `AddDays`, and `AddMonths` with end-of-month clamping.
+- **Formatting & Parsing**: Token-based formatting (`Format`, `FormatIn`, `AppendFormat`, `AppendFormatIn`), Devanagari localization, and `[...]` literal escaping.
+- **Fiscal Year**: Full support for Nepali fiscal years (Shrawan 1 start, Baisakh–Ashadh rules, century rollover `2099/00`, and quarters).
+- **SQL & JSON Integrations**: Safe symmetric `driver.Valuer`/`Scanner` returning AD `time.Time`, plus opt-in `BSSQLDate` for BS text columns.
+- **Examples & CI**: Isolated GORM and Fiber integration examples, zero-allocation assertions, and multi-OS GitHub Actions workflow.
